@@ -1,0 +1,5 @@
+class.java.lang.String class.java.lang.Integer
+Name Age
+Daniil 15
+Vasya 10
+Daniil 30
