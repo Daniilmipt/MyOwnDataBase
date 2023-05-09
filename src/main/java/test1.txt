@@ -3,3 +3,4 @@ Name Age
 Daniil 15
 Vasya 10
 Daniil 30
+Petya

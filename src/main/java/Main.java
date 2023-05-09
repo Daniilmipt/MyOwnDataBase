@@ -1,34 +1,39 @@
 import boostbrain.DataBase;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.HashMap;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) throws Exception {
-//        Map<String, Object> map1 = new HashMap<>();
+//        HashMap<String, Object> map1 = new HashMap<>();
 //        map1.put("age", 14);
 //        map1.put("name", "Daniil");
 //
-//        Map<String, Object> map2 = new HashMap<>();
+//        HashMap<String, Object> map2 = new HashMap<>();
 //        map2.put("age", 11);
 //        map2.put("name", "Maria");
 //
-//        Map<String, Object> map3 = new HashMap<>();
+//        HashMap<String, Object> map3 = new HashMap<>();
 //        map3.put("age", 19);
 //        map3.put("name", "Petya");
 //
-//        Map<String, Object> map4 = new HashMap<>();
+//        HashMap<String, Object> map4 = new HashMap<>();
 //        map4.put("age", null);
 //        map4.put("name", "Ivan");
 //        map4.put("surname", "Ivanov");
 //
-//        Map<String, Object> map5 = new HashMap<>();
+//        HashMap<String, Object> map5 = new HashMap<>();
 //        map5.put("age", null);
 //        map5.put("name", null);
 //        map5.put("surname", null);
 //
-//        Map<String, Class<?>> map = new HashMap<>();
+//        HashMap<String, Class<?>> map = new HashMap<>();
 //        map.put("age", ((Object) 14).getClass());
 //        map.put("name", ((Object) "a").getClass());
 //        map.put("surname", ((Object) "a").getClass());
-//        main.DataBase db = new main.DataBase(map);
+//        DataBase db = new DataBase(map);
 //        db.addRows(List.of(map1, map2, map3, map4));
 //        db.addRows(map5, 2);
 
@@ -38,10 +43,11 @@ public class Main {
         System.out.println(db1.getJson());
 
 //        DataBase<Object> db2 = DataBase.fromFile("/home/daniil/IdeaProjects/MyOwnDataBase/src/main/java/test1.txt");
-//        DataBase<Object> db3 = DataBase.innerJoin(db1, db2, new String[] {"Name"});
+//        DataBase<Object> db3 = DataBase.innerJoin(db1, db2, new String[] {"Name", "Age"});
 //        System.out.println(db3);
+//        System.out.println(db3.getJson());
 
-//                 "serialization"
+////                 "serialization"
 //        FileOutputStream fileOutputStream
 //                = new FileOutputStream("/home/daniil/IdeaProjects/MyOwnDataBase/src/main/java/test2.txt");
 //        ObjectOutputStream objectOutputStream
