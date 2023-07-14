@@ -1,6 +1,5 @@
 package boostbrain;
 
-import com.fasterxml.jackson.datatype.jdk8.OptionalIntDeserializer;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -89,7 +88,12 @@ public class DataBase<V> extends AbstractDataBase<V> implements Serializable {
                 throw new Exception("Incorrect row format. Row hase unexpected columns");
             }
             else{
-                    if (row.get(key)!=null && !row.get(key).getClass().getName().equals(this.keys.get(key).descr())) {
+//                System.out.println(row);
+//                System.out.println(key);
+//                System.out.println(row.get(key).getClass().getName());
+//                System.out.println(this.keys.get(key).descr());
+//                System.out.println();
+                if (row.get(key)!=null && !row.get(key).getClass().getName().equals(this.keys.get(key).descr())) {
                     throw new Exception(String.format("Incorrect key \"%s\" type", key));
                 }
             }
@@ -237,7 +241,7 @@ public class DataBase<V> extends AbstractDataBase<V> implements Serializable {
         return db;
     }
     
-    public void writeToFile(String path) throws Exception {
+    public void writeToFile(String path) {
         File file = new File(path);
         try(BufferedWriter out = new BufferedWriter(new FileWriter(file))) {
 
