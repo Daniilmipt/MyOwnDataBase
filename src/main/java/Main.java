@@ -2,8 +2,11 @@ import boostbrain.DataBase;
 
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -37,10 +40,14 @@ public class Main {
 //        db.addRows(List.of(map1, map2, map3, map4));
 //        db.addRows(map5, 2);
 
+
+//        System.out.println(Arrays.toString("java.lang.String;java.lang.Integer;\n".split(";")));
         DataBase<Object> db1 = DataBase.fromFile("/home/daniil/IdeaProjects/MyOwnDataBase/src/main/java/test1.txt");
-        System.out.println(db1.getColumn("Name"));
-        System.out.println(db1.getData());
-        System.out.println(db1.getJson());
+        System.out.println(db1);
+        db1.writeToFile("/home/daniil/IdeaProjects/MyOwnDataBase/src/main/java/test4.txt");
+//        DataBase<Object> db2 = DataBase.fromFile("/home/daniil/IdeaProjects/MyOwnDataBase/src/main/java/test3.txt");
+//        System.out.println(db1.equals(db2));
+
 
 //        DataBase<Object> db2 = DataBase.fromFile("/home/daniil/IdeaProjects/MyOwnDataBase/src/main/java/test1.txt");
 //        DataBase<Object> db3 = DataBase.innerJoin(db1, db2, new String[] {"Name", "Age"});
