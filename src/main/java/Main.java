@@ -1,6 +1,7 @@
 import boostbrain.DataBase;
 import boostbrain.DataTypes;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.Arrays;
@@ -42,9 +43,31 @@ public class Main {
         db.addRows(map5, 2);
 
         System.out.println(db);
-        System.out.println("names: " + db.getColumn("name"));
-        System.out.println("ages: " + db.getColumn("age"));
-        System.out.println("surnames: " + db.getColumn("surname"));
-        System.out.println("keys: " + db.getKeys());
+        System.out.println();
+        map1 = new HashMap<>();
+        map1.put("age", 14);
+        map1.put("name", "Daniil");
+
+        map2 = new HashMap<>();
+        map2.put("age", 11);
+        map2.put("name", "Maria");
+
+
+        HashMap<String, DataTypes> map_x = new HashMap<>();
+        map_x.put("age", DataTypes.Integer);
+        map_x.put("name", DataTypes.String);
+        DataBase db1 = new DataBase(map_x);
+        db1.addRows(List.of(map1, map2));
+        System.out.println(db1);
+        System.out.println();
+
+        String[] str = {"name", "age"};
+        DataBase db2 = DataBase.innerJoin(db, db1, str);
+
+        System.out.println(db2);
+
+//        db.writeToFile("/home/daniil/MyOwnDataBase/src/main/java/test3.txt");
+
+
     }
 }

@@ -1,6 +1,7 @@
-java.lang.String java.lang.String
-Name Age
-Daniil qq
-Vasya qq
-Daniil ww
-Petya qq
+java.lang.String;java.lang.String;java.lang.Integer;
+surname;name;age;
+;Daniil;14;
+;Maria;11;
+;;;
+;Petya;19;
+Ivanov;Ivan;;
